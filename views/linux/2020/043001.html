@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS7通过rpm安装MySQL5.7.30 | Wenx&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/icons/favicon.ico">
+    <meta name="description" content="记录学习中的点点滴滴">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.bb5a7928.css" as="style"><link rel="preload" href="/assets/js/app.4786c444.js" as="script"><link rel="preload" href="/assets/js/3.9603d880.js" as="script"><link rel="preload" href="/assets/js/1.70659609.js" as="script"><link rel="preload" href="/assets/js/9.d975bdc5.js" as="script"><link rel="prefetch" href="/assets/js/10.311b7e7b.js"><link rel="prefetch" href="/assets/js/11.b61dea9d.js"><link rel="prefetch" href="/assets/js/12.2b5d88b5.js"><link rel="prefetch" href="/assets/js/13.480d92ae.js"><link rel="prefetch" href="/assets/js/14.d064e383.js"><link rel="prefetch" href="/assets/js/15.757cfb27.js"><link rel="prefetch" href="/assets/js/16.231ea48e.js"><link rel="prefetch" href="/assets/js/17.f88b065c.js"><link rel="prefetch" href="/assets/js/18.5f832896.js"><link rel="prefetch" href="/assets/js/19.75824d01.js"><link rel="prefetch" href="/assets/js/20.3bcd97d0.js"><link rel="prefetch" href="/assets/js/21.aa9c4fa8.js"><link rel="prefetch" href="/assets/js/22.67b9ba2c.js"><link rel="prefetch" href="/assets/js/23.fe3b1d8f.js"><link rel="prefetch" href="/assets/js/24.45285c97.js"><link rel="prefetch" href="/assets/js/25.656309b8.js"><link rel="prefetch" href="/assets/js/26.8c335c8b.js"><link rel="prefetch" href="/assets/js/27.103e060d.js"><link rel="prefetch" href="/assets/js/28.d9902552.js"><link rel="prefetch" href="/assets/js/29.281ff6e1.js"><link rel="prefetch" href="/assets/js/30.aa7552a9.js"><link rel="prefetch" href="/assets/js/31.5a5515d7.js"><link rel="prefetch" href="/assets/js/32.6d5c881b.js"><link rel="prefetch" href="/assets/js/33.46fcefad.js"><link rel="prefetch" href="/assets/js/34.482664d5.js"><link rel="prefetch" href="/assets/js/35.00dc22be.js"><link rel="prefetch" href="/assets/js/36.b2587df9.js"><link rel="prefetch" href="/assets/js/37.d52e03f4.js"><link rel="prefetch" href="/assets/js/38.4ea5aa3c.js"><link rel="prefetch" href="/assets/js/39.4146639d.js"><link rel="prefetch" href="/assets/js/4.721e7940.js"><link rel="prefetch" href="/assets/js/40.2663ddec.js"><link rel="prefetch" href="/assets/js/41.59da6539.js"><link rel="prefetch" href="/assets/js/42.1a1500ad.js"><link rel="prefetch" href="/assets/js/43.0885392d.js"><link rel="prefetch" href="/assets/js/44.973191e3.js"><link rel="prefetch" href="/assets/js/45.9f6e89e2.js"><link rel="prefetch" href="/assets/js/46.a49b575a.js"><link rel="prefetch" href="/assets/js/47.6ee4e7c7.js"><link rel="prefetch" href="/assets/js/48.4476323e.js"><link rel="prefetch" href="/assets/js/49.5c92af87.js"><link rel="prefetch" href="/assets/js/5.b73b630c.js"><link rel="prefetch" href="/assets/js/6.4f32edc6.js"><link rel="prefetch" href="/assets/js/7.872850ce.js"><link rel="prefetch" href="/assets/js/8.81f360b2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bb5a7928.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-19557b78><div data-v-19557b78><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-19557b78 data-v-19557b78><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-19557b78 data-v-19557b78><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Wenx's blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Wenx</span>
+            
+          <span data-v-64685f0e>2019 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-19557b78><header class="navbar" data-v-19557b78><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wenx's blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Algorithm/" class="nav-link"><i class="iconfont undefined"></i>
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光机
+</a></div><div class="nav-item"><a href="/project/" class="nav-link"><i class="iconfont reco-api"></i>
+  项目演示
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/jwx90312" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Wenx408" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-19557b78></div> <aside class="sidebar" data-v-19557b78><div class="personal-info-wrapper" data-v-042e23d4><img src="/images/hero.jpg" alt="author-avatar" class="personal-img" data-v-042e23d4> <h3 class="name" data-v-042e23d4>
+    Wenx
+  </h3> <div class="num" data-v-042e23d4><div data-v-042e23d4><h3 data-v-042e23d4>38</h3> <h6 data-v-042e23d4>文章</h6></div> <div data-v-042e23d4><h3 data-v-042e23d4>41</h3> <h6 data-v-042e23d4>标签</h6></div></div> <hr data-v-042e23d4></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Algorithm/" class="nav-link"><i class="iconfont undefined"></i>
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光机
+</a></div><div class="nav-item"><a href="/project/" class="nav-link"><i class="iconfont reco-api"></i>
+  项目演示
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/jwx90312" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Wenx408" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>CentOS7通过rpm安装MySQL5.7.30</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/linux/2020/043001.html#_1-下载mysql的rpm安装包" class="sidebar-link">1. 下载MySQL的rpm安装包</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_2-安装依赖" class="sidebar-link">2. 安装依赖</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_3-安装mysql" class="sidebar-link">3. 安装MySQL</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_4-启动mysql" class="sidebar-link">4. 启动MySQL</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_5-登录mysql修改密码" class="sidebar-link">5. 登录MySQL修改密码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_6-配置my-cnf" class="sidebar-link">6. 配置my.cnf</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/linux/2020/043001.html#_7-配置远程连接" class="sidebar-link">7. 配置远程连接</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-19557b78><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>CentOS7通过rpm安装MySQL5.7.30</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Wenx</span>
+            
+          <span data-v-64685f0e>2019 - </span>
+          2020
+        </a></span></div></div> <div data-v-19557b78><main class="page"><div class="page-title" style="display:none;"><h1>CentOS7通过rpm安装MySQL5.7.30</h1> <hr> <div data-v-34ea29db><i class="iconfont reco-account" data-v-34ea29db><span data-v-34ea29db>Wenx</span></i> <i class="iconfont reco-date" data-v-34ea29db><span data-v-34ea29db>2020-04-30 01:12:02</span></i> <!----> <i class="iconfont reco-tag tags" data-v-34ea29db><span class="tag-item" data-v-34ea29db>CentOS</span><span class="tag-item" data-v-34ea29db>MySQL</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p>上次介绍了Redis的安装方法，这回再来个MySQL吧，把平时最常用的安装都复习下，本来这次讲的应该是在CentOS7下通过rpm安装MySQL 5.7.29，结果研究源码安装时间过长出新版本了~ 那就直接再重装遍MySQL 5.7.30复习下，不说废话直接上傻瓜式教程。</p></div> <h2 id="_1-下载mysql的rpm安装包"><a href="#_1-下载mysql的rpm安装包" class="header-anchor">#</a> 1. 下载MySQL的rpm安装包</h2> <p><img src="/assets/img/202004300101.50b4bdc6.jpg" alt="rpm001"></p> <p><img src="/assets/img/202004300102.83899056.jpg" alt="rpm002"></p> <p><img src="/assets/img/202004300103.023932e3.jpg" alt="rpm003"></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 安装wget</span>
+yum <span class="token function">install</span> –y <span class="token function">wget</span>
+<span class="token comment"># 下载mysql-5.7.30-1.el7.x86_64.rpm-bundle.tar</span>
+<span class="token function">wget</span> https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.30-1.el7.x86_64.rpm-bundle.tar
+<span class="token comment"># 若下载失败（下载成功此步跳过），可安装rz从本地上传mysql-5.7.30-1.el7.x86_64.rpm-bundle.tar</span>
+yum -y <span class="token function">install</span> lrzsz
+rz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_2-安装依赖"><a href="#_2-安装依赖" class="header-anchor">#</a> 2. 安装依赖</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 先检查有没有安装过mysql或mariadb</span>
+<span class="token function">rpm</span> -qa <span class="token operator">|</span><span class="token function">grep</span> mysql
+<span class="token function">rpm</span> -qa <span class="token operator">|</span><span class="token function">grep</span> mariadb
+<span class="token comment"># 我有个mariadb-libs-5.5.64-1.el7.x86_64，把它给卸载了</span>
+<span class="token function">rpm</span> -e --nodeps mariadb-libs-5.5.64-1.el7.x86_64
+
+<span class="token comment"># 安装libaio、perl、net-tools库，要不就会报错 balabala...</span>
+yum -y <span class="token function">install</span> libaio perl net-tools
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_3-安装mysql"><a href="#_3-安装mysql" class="header-anchor">#</a> 3. 安装MySQL</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 建个目录存放解压文件</span>
+<span class="token function">mkdir</span> mysql-5.7.30
+<span class="token comment"># 解压缩</span>
+<span class="token function">tar</span> -xvf mysql-5.7.30-1.el7.x86_64.rpm-bundle.tar -C mysql-5.7.30
+<span class="token comment"># 进入目录准备安装</span>
+<span class="token builtin class-name">cd</span> mysql-5.7.30
+<span class="token comment"># 开始安装，-ivh 其中i表示安装，v表示显示安装过程，h表示显示进度</span>
+<span class="token function">rpm</span> -ivh mysql-community-common-5.7.30-1.el7.x86_64.rpm
+<span class="token function">rpm</span> -ivh mysql-community-libs-5.7.30-1.el7.x86_64.rpm
+<span class="token function">rpm</span> -ivh mysql-community-client-5.7.30-1.el7.x86_64.rpm
+<span class="token function">rpm</span> -ivh mysql-community-server-5.7.30-1.el7.x86_64.rpm
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="_4-启动mysql"><a href="#_4-启动mysql" class="header-anchor">#</a> 4. 启动MySQL</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 启动mysqld服务</span>
+systemctl start mysqld
+
+<span class="token comment"># 下面列出其余systemctl命令（不用运行）</span>
+<span class="token comment"># 查看mysqld服务状态</span>
+systemctl status mysqld
+<span class="token comment"># 停止mysqld服务</span>
+systemctl stop mysqld
+<span class="token comment"># 重新启动mysqld服务</span>
+systemctl restart mysqld
+<span class="token comment"># 配置mysqld开机自动启动</span>
+systemctl <span class="token builtin class-name">enable</span> mysqld
+<span class="token comment"># 配置mysqld开机不自动启动</span>
+systemctl disable mysqld
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="_5-登录mysql修改密码"><a href="#_5-登录mysql修改密码" class="header-anchor">#</a> 5. 登录MySQL修改密码</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查询生成的临时密码</span>
+<span class="token function">grep</span> <span class="token string">&quot;password&quot;</span> /var/log/mysqld.log
+<span class="token comment"># 登录mysql</span>
+mysql -uroot -p
+<span class="token comment"># Enter password: （输入查询到的临时密码）</span>
+
+<span class="token comment"># 因为是本地测试环境，所以想把密码改的简单点</span>
+<span class="token comment"># 查询密码校验配置的系统变量</span>
+SHOW VARIABLES LIKE <span class="token string">'validate_password%'</span><span class="token punctuation">;</span>
+<span class="token comment"># 设置密码校验策略（0 or LOW），要不密码太LOW不让你过</span>
+<span class="token builtin class-name">set</span> global <span class="token assign-left variable">validate_password_policy</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment"># 设置密码校验长度，要不密码太短不让你过</span>
+<span class="token builtin class-name">set</span> global <span class="token assign-left variable">validate_password_length</span><span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token comment"># 这密码有够LOW了，但我就是想要</span>
+<span class="token builtin class-name">set</span> password <span class="token operator">=</span> password<span class="token punctuation">(</span><span class="token string">&quot;1234&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment"># 可以退出，试试用新密码重新登录</span>
+quit
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="_6-配置my-cnf"><a href="#_6-配置my-cnf" class="header-anchor">#</a> 6. 配置my.cnf</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 打开配置文件</span>
+<span class="token function">vi</span> /etc/my.cnf
+
+<span class="token comment"># For advice on how to change settings please see</span>
+<span class="token comment"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span>
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # and set to the amount of RAM for the most important data</span>
+<span class="token comment"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span>
+<span class="token comment"># innodb_buffer_pool_size = 128M</span>
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to turn on a very important data integrity option: logging</span>
+<span class="token comment"># changes to the binary log between backups.</span>
+<span class="token comment"># log_bin</span>
+<span class="token comment">#</span>
+<span class="token comment"># Remove leading # to set options mainly useful for reporting servers.</span>
+<span class="token comment"># The server defaults are faster for transactions and fast SELECTs.</span>
+<span class="token comment"># Adjust sizes as needed, experiment to find the optimal values.</span>
+<span class="token comment"># join_buffer_size = 128M</span>
+<span class="token comment"># sort_buffer_size = 2M</span>
+<span class="token comment"># read_rnd_buffer_size = 2M</span>
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/var/lib/mysql
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/var/lib/mysql/mysql.sock
+
+<span class="token comment"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span><span class="token number">0</span>
+
+log-error<span class="token operator">=</span>/var/log/mysqld.log
+pid-file<span class="token operator">=</span>/var/run/mysqld/mysqld.pid
+
+<span class="token comment"># 因为是本地测试环境，所以库能用就好了，我就不详细说明了（下篇在详细说明），大家可以参照下方官方建议去配置</span>
+<span class="token comment"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span>
+<span class="token comment"># 另外列举下vi编辑器命令</span>
+<span class="token comment"># i（按i键进入INSERT模式，可开始编辑）</span>
+<span class="token comment"># Esc（退出编辑模式）</span>
+<span class="token comment"># :wq（保存退出）</span>
+<span class="token comment"># :q（退出）</span>
+<span class="token comment"># :q!（不保存强制退出）</span>
+
+<span class="token comment"># 重启服务生效（另需注意：配置内路径需要自行创建目录及赋予权限）</span>
+systemctl restart mysqld
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h2 id="_7-配置远程连接"><a href="#_7-配置远程连接" class="header-anchor">#</a> 7. 配置远程连接</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 用新密码登进去试试</span>
+mysql -uroot -p
+<span class="token comment"># 授权 所有权限（all），所有数据库（*.*） 给 用户名（root），任何主机（%），密码（yourpassword）</span>
+grant all privileges on *.* to <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'yourpassword'</span> with grant option<span class="token punctuation">;</span>
+<span class="token comment"># 刷新权限使其立即生效</span>
+flush privileges<span class="token punctuation">;</span>
+<span class="token comment"># 退出MySQL</span>
+quit
+
+<span class="token comment"># 关闭防火墙</span>
+systemctl stop firewalld
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>至此，我在外面用Navicat等可视化工具就可以远程连接数据库了，可劲造吧。。。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2020-6-10 9:09:06 PM</span></div></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.4786c444.js" defer></script><script src="/assets/js/3.9603d880.js" defer></script><script src="/assets/js/1.70659609.js" defer></script><script src="/assets/js/9.d975bdc5.js" defer></script>
+  </body>
+</html>
