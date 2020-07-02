@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS7安装Docker搭建开发环境 | Wenx&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/icons/favicon.ico">
+    <meta name="description" content="记录学习中的点点滴滴">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.04ce8cf3.css" as="style"><link rel="preload" href="/assets/js/app.05d5a57f.js" as="script"><link rel="preload" href="/assets/js/3.b7d195c1.js" as="script"><link rel="preload" href="/assets/js/1.609e65c7.js" as="script"><link rel="preload" href="/assets/js/12.bc2718eb.js" as="script"><link rel="prefetch" href="/assets/js/10.c71537c8.js"><link rel="prefetch" href="/assets/js/11.afe691c8.js"><link rel="prefetch" href="/assets/js/13.2d41f36b.js"><link rel="prefetch" href="/assets/js/14.d1a1f3d1.js"><link rel="prefetch" href="/assets/js/15.24d9c221.js"><link rel="prefetch" href="/assets/js/16.de55561f.js"><link rel="prefetch" href="/assets/js/17.23de2866.js"><link rel="prefetch" href="/assets/js/18.a8f0e144.js"><link rel="prefetch" href="/assets/js/19.299ba706.js"><link rel="prefetch" href="/assets/js/20.3959db7d.js"><link rel="prefetch" href="/assets/js/21.07242808.js"><link rel="prefetch" href="/assets/js/22.2fc8571f.js"><link rel="prefetch" href="/assets/js/23.cbcf55e3.js"><link rel="prefetch" href="/assets/js/24.1cf6889e.js"><link rel="prefetch" href="/assets/js/25.db5a8271.js"><link rel="prefetch" href="/assets/js/26.c25f0618.js"><link rel="prefetch" href="/assets/js/27.5b213fe8.js"><link rel="prefetch" href="/assets/js/28.3e501889.js"><link rel="prefetch" href="/assets/js/29.76fcfb6b.js"><link rel="prefetch" href="/assets/js/30.2848708c.js"><link rel="prefetch" href="/assets/js/31.4cab5c19.js"><link rel="prefetch" href="/assets/js/32.0cc779cd.js"><link rel="prefetch" href="/assets/js/33.f8ac7fac.js"><link rel="prefetch" href="/assets/js/34.5dfea9d8.js"><link rel="prefetch" href="/assets/js/35.6a8387fc.js"><link rel="prefetch" href="/assets/js/36.55732230.js"><link rel="prefetch" href="/assets/js/37.3c77277b.js"><link rel="prefetch" href="/assets/js/38.c24f08d5.js"><link rel="prefetch" href="/assets/js/39.ed275e16.js"><link rel="prefetch" href="/assets/js/4.89a3ed3e.js"><link rel="prefetch" href="/assets/js/40.e60218b4.js"><link rel="prefetch" href="/assets/js/41.978766bd.js"><link rel="prefetch" href="/assets/js/42.2aa9060f.js"><link rel="prefetch" href="/assets/js/43.ded35d68.js"><link rel="prefetch" href="/assets/js/44.2d76271b.js"><link rel="prefetch" href="/assets/js/45.5fcb92a9.js"><link rel="prefetch" href="/assets/js/46.1fc0490d.js"><link rel="prefetch" href="/assets/js/47.dbbcf4d9.js"><link rel="prefetch" href="/assets/js/48.4a40e7bf.js"><link rel="prefetch" href="/assets/js/49.38e68e45.js"><link rel="prefetch" href="/assets/js/5.49656f22.js"><link rel="prefetch" href="/assets/js/50.83cc7df5.js"><link rel="prefetch" href="/assets/js/51.341237f8.js"><link rel="prefetch" href="/assets/js/52.81f9ad2a.js"><link rel="prefetch" href="/assets/js/53.73966cb9.js"><link rel="prefetch" href="/assets/js/6.575b97ff.js"><link rel="prefetch" href="/assets/js/7.c1ff5d5c.js"><link rel="prefetch" href="/assets/js/8.c1f26a6d.js"><link rel="prefetch" href="/assets/js/9.191de227.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.04ce8cf3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-19557b78><div data-v-19557b78><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-19557b78 data-v-19557b78><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-19557b78 data-v-19557b78><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Wenx's blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Wenx</span>
+            
+          <span data-v-64685f0e>2019 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-19557b78><header class="navbar" data-v-19557b78><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Wenx's blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Algorithm/" class="nav-link"><i class="iconfont undefined"></i>
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光机
+</a></div><div class="nav-item"><a href="/project/" class="nav-link"><i class="iconfont reco-api"></i>
+  项目演示
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/jwx90312" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Wenx408" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-19557b78></div> <aside class="sidebar" data-v-19557b78><div class="personal-info-wrapper" data-v-042e23d4><img src="/images/hero.jpg" alt="author-avatar" class="personal-img" data-v-042e23d4> <h3 class="name" data-v-042e23d4>
+    Wenx
+  </h3> <div class="num" data-v-042e23d4><div data-v-042e23d4><h3 data-v-042e23d4>40</h3> <h6 data-v-042e23d4>文章</h6></div> <div data-v-042e23d4><h3 data-v-042e23d4>43</h3> <h6 data-v-042e23d4>标签</h6></div></div> <hr data-v-042e23d4></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Algorithm/" class="nav-link"><i class="iconfont undefined"></i>
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光机
+</a></div><div class="nav-item"><a href="/project/" class="nav-link"><i class="iconfont reco-api"></i>
+  项目演示
+</a></div><div class="nav-item"><a href="/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/jwx90312" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/Wenx408" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>CentOS7安装Docker搭建开发环境</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/2020/07/03/_070201/#一、docker-安装" class="sidebar-link">一、Docker 安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_1-前提条件" class="sidebar-link">1. 前提条件</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_2-使用-docker-仓库进行安装" class="sidebar-link">2. 使用 Docker 仓库进行安装</a></li></ul></li><li><a href="/2020/07/03/_070201/#二、开发环境搭建" class="sidebar-link">二、开发环境搭建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_1-配置阿里云镜像加速器" class="sidebar-link">1. 配置阿里云镜像加速器</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_2-mysql-搭建" class="sidebar-link">2. MySQL 搭建</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_3-redis-搭建" class="sidebar-link">3. Redis 搭建</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_4-tomcat-搭建" class="sidebar-link">4. Tomcat 搭建</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_5-nginx-搭建" class="sidebar-link">5. Nginx 搭建</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_6-配置防火墙" class="sidebar-link">6. 配置防火墙</a></li><li class="sidebar-sub-header"><a href="/2020/07/03/_070201/#_7-常用-docker-命令" class="sidebar-link">7. 常用 Docker 命令</a></li></ul></li><li><a href="/2020/07/03/_070201/#参考资料" class="sidebar-link">参考资料</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-19557b78><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>CentOS7安装Docker搭建开发环境</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Wenx</span>
+            
+          <span data-v-64685f0e>2019 - </span>
+          2020
+        </a></span></div></div> <div data-v-19557b78><main class="page"><div class="page-title" style="display:none;"><h1>CentOS7安装Docker搭建开发环境</h1> <hr> <div data-v-34ea29db><i class="iconfont reco-account" data-v-34ea29db><span data-v-34ea29db>Wenx</span></i> <i class="iconfont reco-date" data-v-34ea29db><span data-v-34ea29db>2020-07-02 20:32:43</span></i> <!----> <i class="iconfont reco-tag tags" data-v-34ea29db><span class="tag-item" data-v-34ea29db>CentOS</span><span class="tag-item" data-v-34ea29db>Docker</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div class="custom-block tip"><p>本次介绍下用Docker来搭建开发环境，以前本地开发为了省事一些诸如MySql、Redis、Nginx之类的就直接安装了，有时配置不对功能用不了，卸载又不彻底把电脑弄得乱七八糟，反正是挺烦心的。</p> <p>后来装了虚拟机里面再乱也不怕了，但是作为一个认真的程序员（强迫症）里面乱糟糟也忍不了，为了虚拟机内部应用的隔离、方便扩展、往生产环境的迁移等问题选择使用Docker，它的安装比较简单直接参照官方文档即可。</p> <p>废话不多说了直接上干货~</p></div> <h2 id="一、docker-安装"><a href="#一、docker-安装" class="header-anchor">#</a> 一、Docker 安装</h2> <p>我的操作系统是CentOS 7.6，装的Docker 18.03.1.ce 为了避坑安装之前我在网上找些资料进行对比，最后选定参照官方文档进行安装，事实上在网上有些大神博客写的还是不错的~</p> <h3 id="_1-前提条件"><a href="#_1-前提条件" class="header-anchor">#</a> 1. 前提条件</h3> <ul><li><p><strong>选择一个 CentOS 7 的稳定版本</strong></p></li> <li><p><strong>启用 yum 的 centos-extras 库</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 默认 yum 的 centos-extras 库是启用的，可通过修改CentOS-Base.repo文件进行设置</span>
+<span class="token function">vi</span> /etc/yum.repos.d/CentOS-Base.repo
+
+<span class="token punctuation">[</span>extras<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>CentOS-<span class="token variable">$releasever</span> - Extras
+<span class="token assign-left variable">mirrorlist</span><span class="token operator">=</span>http://mirrorlist.centos.org/?release<span class="token operator">=</span><span class="token variable">$releasever</span><span class="token operator">&amp;</span><span class="token assign-left variable">arch</span><span class="token operator">=</span><span class="token variable">$basearch</span><span class="token operator">&amp;</span><span class="token assign-left variable">repo</span><span class="token operator">=</span>extras<span class="token operator">&amp;</span><span class="token assign-left variable">infra</span><span class="token operator">=</span><span class="token variable">$infra</span>
+<span class="token comment">#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>  <span class="token comment"># 该项存在请将値从0改为1，该项不存在默认为1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+<span class="token comment"># 可通过下面命令进行启用库的查看（可将enabled=0查看区别）</span>
+yum repolist enabled
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></li> <li><p><strong>推荐使用 overlay2 存储驱动（重中之重，好多资料都不提或者一笔带过，但这个地方着实是一个超级大坑）</strong>
+我习惯以官方文档为主，用其他资料来辅助理解及避坑。在这一步骤上官方半句话略过，其他安装博客要不机翻，要不干脆就不写，但是在一些BUG及问题解决帖上发现此处乃是超级大坑。可参照<a href="#ref1">参考资料[1]</a> <a href="#ref2">[2]</a> <a href="#ref4">[4]</a> <a href="#ref5">[5]</a> <a href="#ref6">[6]</a> <strong>我将信息总结为以下几点：</strong></p> <ul><li>Docker v17.06 之前版本 CentOS 和 RHEL 生产环境必须使用 <code>devicemapper</code> 驱动的 <code>direct-lvm</code> 模式</li> <li>Docker v17.06 及以后版本推荐使用 <code>overlay2</code> 驱动</li> <li>使用 <code>overlay2</code> 驱动要求 Linux 系统内核（kernel 版本 4.0 以上）</li> <li><code>overlay</code>、<code>overlay2</code> 底层为 <code>overlayfs</code> 文件系统需要用到 <code>d_type</code> 特性</li> <li>CentOS7 发行版默认 Kernel 版本为 3.10，可以使用 <code>overlay</code> 但不建议（Kernel 版本 3.10 支持 <code>overlay</code>）</li> <li>xfs 格式文件系统必须指定 <code>ftype=1</code> 来开启 <code>d_type</code> 特性</li> <li><code>overlay</code>、<code>devicemapper</code> 存储驱动已在 Docker Engine-Enterprise 18.09中弃用</li></ul> <p><strong>得出的结论：</strong></p> <ul><li>生产环境 Linux 系统内核版本我不能决定，具体根据实际情况而定，可以不升级内核选择Docker 18.09 之前版本，使用 <code>devicemapper</code> 驱动的 <code>direct-lvm</code> 模式</li> <li>本地开发环境越省心越好，内核不升级了保持 Kernel 版本 3.10，指定 <code>ftype=1</code> 开启 <code>d_type</code> 特性</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 可通过 xfs_info 命令查看 ftype 属性</span>
+xfs_info /
+
+<span class="token comment"># Docker 安装完成可通过 docker info 命令验证是否支持 d_type 特性</span>
+docker info
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="/assets/img/202007020101.98a7e87e.jpg" alt="xfs_info"></p> <p><img src="/assets/img/202007020102.4864c7d5.jpg" alt="docker_info"></p></li> <li><p><strong>卸载旧版本</strong></p> <p>旧版 Docker 称为<code>docker</code>或<code>docker-engine</code>。如果已安装这些程序，请卸载它们以及相关的依赖项。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 卸载旧版本程序及相关依赖，然而这代码其实并没有什么鸟用，当然保险起见还是运行一下</span>
+yum remove docker <span class="token punctuation">\</span>
+           docker-client <span class="token punctuation">\</span>
+           docker-client-latest <span class="token punctuation">\</span>
+           docker-common <span class="token punctuation">\</span>
+           docker-latest <span class="token punctuation">\</span>
+           docker-latest-logrotate <span class="token punctuation">\</span>
+           docker-logrotate <span class="token punctuation">\</span>
+           docker-engine
+
+<span class="token comment"># 我之前安装过了，想卸载还是下面命令好使</span>
+<span class="token comment"># 卸载Docker Engine，CLI和Containerd软件包</span>
+yum remove docker-ce <span class="token punctuation">\</span>
+           docker-ce-cli <span class="token punctuation">\</span>
+           containerd.io
+
+<span class="token comment"># 主机上的镜像、容器、卷和自定义配置文件不会自动删除，需要手动删除所有图像、容器、卷及所有已编辑的配置文件</span>
+<span class="token function">rm</span> -rf /var/lib/docker
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div></li></ul> <h3 id="_2-使用-docker-仓库进行安装"><a href="#_2-使用-docker-仓库进行安装" class="header-anchor">#</a> 2. 使用 Docker 仓库进行安装</h3> <ul><li><p><strong>配置 Docker 仓库</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 安装 yum-util 软件包（提供yum-config-manager 功能），另外两个是 devicemapper 的驱动依赖（如果需要的话）</span>
+yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2
+
+<span class="token comment"># 设置 Docker 仓库（当然也可以选择阿里云仓库，跳过此步到下一步）</span>
+yum-config-manager <span class="token punctuation">\</span>
+	--add-repo <span class="token punctuation">\</span>
+    https://download.docker.com/linux/centos/docker-ce.repo
+    
+<span class="token comment"># 设置阿里云仓库</span>
+yum-config-manager <span class="token punctuation">\</span>
+	--add-repo <span class="token punctuation">\</span>
+    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li> <li><p><strong>选择特定 Docker 版本安装</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 可以查看仓库中所有 docker 版本，并选择特定版本安装</span>
+<span class="token comment"># 按版本号（从高到低）进行排序，特定 CentOS 版本以 .el7 后缀显示（EL7 适用 Red Hat 7.x, CentOS 7.x 安装）</span>
+yum list docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="/assets/img/202007020103.c2d8da01.jpg" alt="yum_list"></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 通过特定格式包名安装指定版本，包名格式为（docker-ce）加上版本字符串（上图第2列），从第1个冒号（:）到第1个连字符（从:到-之间的内容，没有:就从开头到-），以连字符（-）分隔。例如，docker-ce-18.03.1.ce。</span>
+<span class="token comment"># 通过命令 yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io 安装</span>
+<span class="token comment"># 阿里云仓库好像没有 docker-ce-cli-18.03.1.ce，可能集成了吧，这块没有进行测试，但不影响使用</span>
+yum <span class="token function">install</span> docker-ce-18.03.1.ce docker-ce-cli-18.03.1.ce containerd.io
+
+<span class="token comment"># 启动docker服务</span>
+systemctl start docker
+
+<span class="token comment"># 查看docker服务状态</span>
+systemctl status docker
+<span class="token comment"># 停止docker服务</span>
+systemctl stop docker
+<span class="token comment"># 重新启动docker服务</span>
+systemctl restart docker
+<span class="token comment"># 配置docker开机自动启动</span>
+systemctl <span class="token builtin class-name">enable</span> docker
+<span class="token comment"># 配置docker开机不自动启动</span>
+systemctl disable docker
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div></li></ul> <h2 id="二、开发环境搭建"><a href="#二、开发环境搭建" class="header-anchor">#</a> 二、开发环境搭建</h2> <h3 id="_1-配置阿里云镜像加速器"><a href="#_1-配置阿里云镜像加速器" class="header-anchor">#</a> 1. 配置阿里云镜像加速器</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 先阿里云注册个账号，容器镜像服务-镜像中心-镜像加速器</span>
+<span class="token comment"># 直达地址 https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</span>
+<span class="token comment"># 可获得加速器地址 https://xxxxxxxx.mirror.aliyuncs.com</span>
+<span class="token comment"># 使用加速器可以提升获取Docker官方镜像的速度</span>
+
+<span class="token comment"># 创建配置文件夹，docker 安装完默认存在</span>
+<span class="token function">mkdir</span> -p /etc/docker
+
+<span class="token comment"># 添加镜像加速配置文件</span>
+<span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
+{
+  &quot;registry-mirrors&quot;: [&quot;https://xxxxxxxx.mirror.aliyuncs.com&quot;]
+}
+EOF</span>
+
+<span class="token comment"># 重新加载配置</span>
+systemctl daemon-reload
+<span class="token comment"># 重新启动 docker</span>
+systemctl restart docker
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_2-mysql-搭建"><a href="#_2-mysql-搭建" class="header-anchor">#</a> 2. MySQL 搭建</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 拉取mysql 5.7镜像</span>
+docker pull mysql:5.7
+
+<span class="token comment"># 运行mysql镜像，-p：指定端口映射，主机(宿主)端口:容器端口；--name：为容器指定别名；-v：指定目录映射，主机(宿主)目录:容器目录，你可以理解为Windows目录的快捷方式，容器内目录的文件实际存储在主机目录中；-e：设置环境变量，此处为mysql设置密码，-d：后台运行容器，并返回容器ID</span>
+docker run -p <span class="token number">3306</span>:3306 --name mysql5.7 <span class="token punctuation">\</span>
+-v /usr/local/docker/mysql/conf:/etc/mysql <span class="token punctuation">\</span>
+-v /usr/local/docker/mysql/logs:/var/log/mysql <span class="token punctuation">\</span>
+-v /usr/local/docker/mysql/data:/var/lib/mysql <span class="token punctuation">\</span>
+-e <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>abcd1234 <span class="token punctuation">\</span>
+-d mysql:5.7
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="_3-redis-搭建"><a href="#_3-redis-搭建" class="header-anchor">#</a> 3. Redis 搭建</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 拉取redis 5.0.5镜像</span>
+docker pull redis:5.0.5
+
+<span class="token comment"># 运行redis镜像，-dit：-d、-i、-t的结合，-d之前说了，-i-t通常联合使用，用来以交互方式启动容器并为容器重新分配一个伪输入终端，可使用docker exec进行交互</span>
+docker run -dit --name redis -p <span class="token number">6379</span>:6379 redis:5.0.5
+
+<span class="token comment"># 通过 docker exec 连接使用 redis 服务，exit 命令退回到宿主机</span>
+docker <span class="token builtin class-name">exec</span> -it redis /bin/bash
+
+<span class="token comment"># 上面命令可进入 docker 容器内部，运行 redis-cli 可使用 redis 服务</span>
+redis-cli
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="_4-tomcat-搭建"><a href="#_4-tomcat-搭建" class="header-anchor">#</a> 4. Tomcat 搭建</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 拉取tomcat 8.5带jre8的镜像</span>
+docker pull tomcat:8.5-jre8
+
+<span class="token comment"># 运行tomcat镜像，并指定端口映射、指定目录映射</span>
+<span class="token comment"># 项目往宿主机 /usr/local/docker/tomcat/webapps 放就可以发布</span>
+<span class="token comment"># -v 目录映射已将容器内 webapps文件夹替换为宿主机文件夹，所以访问 tomcat 不会显示小猫界面只会显示404</span>
+docker run -dit --name tomcat -p <span class="token number">8888</span>:8080 <span class="token punctuation">\</span>
+-v /usr/local/docker/tomcat/webapps:/usr/local/tomcat/webapps <span class="token punctuation">\</span>
+tomcat:8.5-jre8
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="_5-nginx-搭建"><a href="#_5-nginx-搭建" class="header-anchor">#</a> 5. Nginx 搭建</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 拉取 nginx 镜像</span>
+docker pull nginx
+
+<span class="token comment"># 运行 nginx 镜像，并指定端口映射</span>
+docker run --name nginx -p <span class="token number">88</span>:80 -d nginx
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_6-配置防火墙"><a href="#_6-配置防火墙" class="header-anchor">#</a> 6. 配置防火墙</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 前几步配置的MySql、Redis、Tomcat、Nginx等要想通过网络访问，需要防火墙打开端口</span>
+
+<span class="token comment"># 查看防火墙状态</span>
+systemctl status firewalld
+<span class="token comment"># 开启防火墙</span>
+systemctl start firewalld
+<span class="token comment"># 关闭防火墙</span>
+systemctl stop firewalld
+<span class="token comment"># 查看3306端口状态</span>
+firewall-cmd --zone<span class="token operator">=</span>public --query-port<span class="token operator">=</span><span class="token number">3306</span>/tcp
+<span class="token comment"># 打开3306端口，--permanent 永久生效（无此参数重启后失效）</span>
+firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp --permanent
+<span class="token comment"># 删除3306端口</span>
+firewall-cmd --zone<span class="token operator">=</span>public --remove-port<span class="token operator">=</span><span class="token number">3306</span>/tcp --permanent
+<span class="token comment"># 重新加载防火墙</span>
+firewall-cmd --reload
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="_7-常用-docker-命令"><a href="#_7-常用-docker-命令" class="header-anchor">#</a> 7. 常用 Docker 命令</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 拉取 docker 远程仓库镜像到本地</span>
+docker pull <span class="token operator">&lt;</span>IMAGE<span class="token operator">&gt;</span>
+<span class="token comment"># 查看 docker 本地镜像</span>
+docker images
+<span class="token comment"># 删除 docker 本地镜像</span>
+docker rmi <span class="token operator">&lt;</span>IMAGE<span class="token operator">&gt;</span>
+<span class="token comment"># 使用 Dockerfile 创建镜像</span>
+docker build -t <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span>
+<span class="token comment"># 从容器创建一个新的镜像</span>
+docker commit <span class="token operator">&lt;</span>IMAGE<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span>
+<span class="token comment"># 打包镜像成tar文件，-o：输出到的文件</span>
+docker save -o <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span>.tar <span class="token operator">&lt;</span>IMAGE<span class="token operator">&gt;</span>
+<span class="token comment"># 导入tar文件到镜像</span>
+docker load -i <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span>.tar
+<span class="token comment"># 创建一个新的容器并运行一个命令</span>
+docker run --name <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span> -d <span class="token operator">&lt;</span>IMAGE<span class="token operator">&gt;</span>
+
+<span class="token comment"># 查看 docker 正在运行的容器</span>
+docker <span class="token function">ps</span>
+<span class="token comment"># 查看 docker 所有容器（包括停止的）</span>
+docker <span class="token function">ps</span> -a
+<span class="token comment"># 启动 docker 容器</span>
+docker start <span class="token operator">&lt;</span>CONTAINER<span class="token operator">&gt;</span>
+<span class="token comment"># 停止 docker 容器</span>
+docker stop <span class="token operator">&lt;</span>CONTAINER<span class="token operator">&gt;</span>
+<span class="token comment"># 删除 docker 容器</span>
+docker <span class="token function">rm</span> <span class="token operator">&lt;</span>CONTAINER<span class="token operator">&gt;</span>
+
+<span class="token comment"># 在容器中开启一个交互模式的终端</span>
+docker <span class="token builtin class-name">exec</span> -it <span class="token operator">&lt;</span>CONTAINER<span class="token operator">&gt;</span> /bin/bash
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p><strong>总结：</strong> Docker还有很多拓展玩法，比如容器间的通讯、Compose、Swarm，后续还有K8S还在研究中，等我腾出时间整理好了再发出来分享给大家~</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <p><span id="ref1">[1]</span> <a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener noreferrer">CentOS安装Docker官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><span id="ref2">[2]</span> <a href="https://docs.docker.com/storage/storagedriver/select-storage-driver/" target="_blank" rel="noopener noreferrer">Docker存储驱动官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><span id="ref3">[3]</span> <a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener noreferrer">Docker命令官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><span id="ref4">[4]</span> <a href="https://blog.csdn.net/kjh2007abc/article/details/90554665" target="_blank" rel="noopener noreferrer">一个奇葩的docker启动服务故常排查<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><span id="ref5">[5]</span> <a href="https://www.jianshu.com/p/00ffd8df6010" target="_blank" rel="noopener noreferrer">基于XFS文件系统的overlayfs下使用docker，为何要使用d_type=1<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><span id="ref6">[6]</span> <a href="https://www.cnblogs.com/rancher-maomao/p/8636265.html" target="_blank" rel="noopener noreferrer">CentOS7.x系统中使用Docker时，在存储方面需要注意的问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-44bd5a18 data-v-44bd5a18><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-44bd5a18><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-44bd5a18></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-44bd5a18></path></svg></div></div></div>
+    <script src="/assets/js/app.05d5a57f.js" defer></script><script src="/assets/js/3.b7d195c1.js" defer></script><script src="/assets/js/1.609e65c7.js" defer></script><script src="/assets/js/12.bc2718eb.js" defer></script>
+  </body>
+</html>
